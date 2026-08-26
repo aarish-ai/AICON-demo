@@ -62,8 +62,8 @@ export default function Registration() {
           <AnimatePresence mode="wait">
             {success ? (
               <motion.div key="success" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-10">
-                <h3 className="text-4xl font-black text-aicon-blue uppercase mb-4">You're In!</h3>
-                <p className="text-xl">See you at AICON '26.</p>
+                <h3 className="text-4xl font-black text-aicon-blue uppercase mb-4">You&apos;re In!</h3>
+                <p className="text-xl">See you at AICON &apos;26.</p>
               </motion.div>
             ) : (
               <motion.form key="form" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
@@ -113,7 +113,7 @@ export default function Registration() {
                 {step === 3 && (
                   <div className="flex flex-col gap-6">
                     <h3 className="text-2xl font-bold uppercase mb-4">Confirm</h3>
-                    <p className="text-lg">You are registering for AICON '26.</p>
+                    <p className="text-lg">You are registering for AICON &apos;26.</p>
                     <div className="flex gap-4 mt-4">
                       <button type="button" onClick={() => setStep(2)} className="w-1/3 border-2 border-aicon-ink text-aicon-ink py-4 font-black uppercase hover:bg-gray-100 transition-colors">Back</button>
                       <button type="submit" className="w-2/3 bg-aicon-yellow text-aicon-ink py-4 font-black uppercase tracking-wider border-2 border-aicon-ink hover:bg-aicon-red hover:text-aicon-bone hover:border-aicon-red transition-colors">Submit</button>
