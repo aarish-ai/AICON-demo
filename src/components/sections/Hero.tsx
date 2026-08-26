@@ -52,15 +52,21 @@ export default function Hero() {
 
       {/* Chunky Typography with strict 2px gap */}
       <div ref={textRef} className="relative z-20 flex flex-col items-center justify-center h-full w-full">
-        <h1 className="text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter" 
-            style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)', marginBottom: '1px' }}>
-          AI
-        </h1>
-        <h1 className="text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter absolute" 
-            style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)', top: 'calc(50% + 1px)', transform: 'translateY(-50%)' }}>
-          AI
-        </h1>
-        <h2 className="text-8xl md:text-[12rem] font-black text-aicon-yellow uppercase drop-shadow-[10px_10px_0px_#14161A] absolute bottom-10 md:bottom-20">
+        {/* Container for AI to keep it perfectly centered */}
+        <div className="relative flex items-center justify-center h-48 md:h-96 w-full">
+          {/* Top Half */}
+          <h1 className="absolute text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter" 
+              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)', transform: 'translateY(-2px)' }}>
+            AI
+          </h1>
+          {/* Bottom Half */}
+          <h1 className="absolute text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter" 
+              style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)', transform: 'translateY(2px)' }}>
+            AI
+          </h1>
+        </div>
+        
+        <h2 className="text-8xl md:text-[12rem] font-black text-aicon-yellow uppercase drop-shadow-[10px_10px_0px_#14161A] mt-4 md:mt-8">
           CON '26
         </h2>
       </div>
