@@ -50,25 +50,24 @@ export default function Hero() {
       <div ref={lineRef} className="absolute h-[6px] bg-aicon-yellow z-10 origin-left" 
            style={{ top: 'calc(50% - 3px)', left: '-10%', transform: 'rotate(-15deg)' }} />
 
-      {/* Chunky Typography with strict 2px gap */}
+      {/* Chunky Typography with strict 2px gap on a single line */}
       <div ref={textRef} className="relative z-20 flex flex-col items-center justify-center h-full w-full">
-        {/* Container for AI to keep it perfectly centered */}
-        <div className="relative flex items-center justify-center h-48 md:h-96 w-full">
+        {/* Container to keep text perfectly centered */}
+        <div className="relative flex items-center justify-center h-48 md:h-64 w-full px-4">
+          
           {/* Top Half */}
-          <h1 className="absolute text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter" 
+          <h1 className="absolute text-[15vw] md:text-[10vw] font-black text-white leading-none tracking-tighter whitespace-nowrap" 
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)', transform: 'translateY(-2px)' }}>
-            AI
+            AICON '26
           </h1>
+          
           {/* Bottom Half */}
-          <h1 className="absolute text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter" 
+          <h1 className="absolute text-[15vw] md:text-[10vw] font-black text-white leading-none tracking-tighter whitespace-nowrap" 
               style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)', transform: 'translateY(2px)' }}>
-            AI
+            AICON '26
           </h1>
+          
         </div>
-        
-        <h2 className="text-8xl md:text-[12rem] font-black text-aicon-yellow uppercase drop-shadow-[10px_10px_0px_#14161A] mt-4 md:mt-8">
-          CON '26
-        </h2>
       </div>
     </section>
   );
