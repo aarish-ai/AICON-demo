@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-aicon-blue: #1532B1;
+  --color-aicon-yellow: #FCDC58;
+  --color-aicon-red: #7D0202;
+  --color-aicon-bone: #FDF8E9;
+  --color-aicon-ink: #14161A;
+}
 
 .grain-overlay {
   position: absolute;
