@@ -11,6 +11,7 @@ import Footer from '@/components/sections/Footer';
 
 // Use the existing Hero component for now until the concepts are built
 import Hero from '@/components/sections/Hero';
+import HeroLivePoster from '@/components/sections/hero-concepts/HeroLivePoster';
 
 export default function Home() {
   const [activeHero, setActiveHero] = useState<1 | 2 | 3>(1);
@@ -20,7 +21,7 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       
-      <Hero /> {/* Temporary placeholder until Tasks 2-4 */}
+      {activeHero === 1 ? <HeroLivePoster /> : <Hero />}
 
       <About />
       <Events />
