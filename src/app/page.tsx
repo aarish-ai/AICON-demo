@@ -12,6 +12,7 @@ import Footer from '@/components/sections/Footer';
 // Use the existing Hero component for now until the concepts are built
 import Hero from '@/components/sections/Hero';
 import HeroLivePoster from '@/components/sections/hero-concepts/HeroLivePoster';
+import HeroSpotlight from '@/components/sections/hero-concepts/HeroSpotlight';
 
 export default function Home() {
   const [activeHero, setActiveHero] = useState<1 | 2 | 3>(1);
@@ -21,7 +22,9 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       
-      {activeHero === 1 ? <HeroLivePoster /> : <Hero />}
+      {activeHero === 1 && <HeroLivePoster />}
+      {activeHero === 2 && <HeroSpotlight />}
+      {activeHero === 3 && <Hero />}
 
       <About />
       <Events />
