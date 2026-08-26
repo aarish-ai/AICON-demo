@@ -13,6 +13,7 @@ import Footer from '@/components/sections/Footer';
 import Hero from '@/components/sections/Hero';
 import HeroLivePoster from '@/components/sections/hero-concepts/HeroLivePoster';
 import HeroSpotlight from '@/components/sections/hero-concepts/HeroSpotlight';
+import HeroGlitch from '@/components/sections/hero-concepts/HeroGlitch';
 
 export default function Home() {
   const [activeHero, setActiveHero] = useState<1 | 2 | 3>(1);
@@ -24,7 +25,7 @@ export default function Home() {
       
       {activeHero === 1 && <HeroLivePoster />}
       {activeHero === 2 && <HeroSpotlight />}
-      {activeHero === 3 && <Hero />}
+      {activeHero === 3 && <HeroGlitch />}
 
       <About />
       <Events />
