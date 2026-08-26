@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-40 transition-colors duration-300 ${scrolled ? 'bg-aicon-ink text-aicon-bone' : 'bg-transparent text-aicon-bone'}`}>
       <div className="flex justify-between items-center p-6">
-        <div className="flex items-center">
+        <div className={`flex items-center transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           <Image src="/assets/AIcon.jpeg" alt="AICON '26 Logo" width={48} height={48} className="object-cover rounded-md" />
         </div>
         <Link href="#registration">
