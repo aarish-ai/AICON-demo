@@ -1,36 +1,44 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Countdown from '../ui/Countdown';
 
 export default function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const lineRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.matchMedia();
-    
-    ctx.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.fromTo(titleRef.current, 
-        { clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', y: 50 },
-        { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', y: 0, duration: 1.2, ease: 'power4.out' }
+    let ctx = gsap.context(() => {
+      gsap.fromTo(lineRef.current, 
+        { width: 0, opacity: 0 },
+        { width: '150vw', opacity: 1, duration: 1.5, ease: 'power4.out', delay: 0.2 }
       );
     });
-
-    ctx.add("(prefers-reduced-motion: reduce)", () => {
-      gsap.set(titleRef.current, { clipPath: 'none', y: 0 });
-    });
-    
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-aicon-ink flex flex-col items-center justify-center overflow-hidden">
-      <div className="grain-overlay" />
-      <h1 ref={titleRef} className="text-7xl md:text-9xl font-black text-aicon-blue uppercase z-10">
-        AICON '26
-      </h1>
-      <div className="z-10 mt-8">
-        <Countdown targetDate="2026-10-24T00:00:00Z" />
+    <section className="relative min-h-screen overflow-hidden bg-aicon-blue flex items-center justify-center">
+      {/* Background Texture */}
+      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_#000_1px,_transparent_1px)] [background-size:20px_20px]" />
+      
+      {/* Top Left Red Triangle Slice */}
+      <div className="absolute top-0 left-0 w-[60vw] h-[80vh] bg-aicon-red" 
+           style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }} />
+           
+      {/* Yellow Slash Line */}
+      <div ref={lineRef} className="absolute h-2 bg-aicon-yellow z-10 origin-left" 
+           style={{ top: '50%', left: '-10%', transform: 'rotate(-15deg)' }} />
+
+      {/* Chunky Typography */}
+      <div className="relative z-20 flex flex-col items-center">
+        <h1 className="text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)' }}>
+          AI
+        </h1>
+        <h1 className="text-[12rem] md:text-[20rem] font-black text-white leading-none tracking-tighter -mt-16" style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)' }}>
+          AI
+        </h1>
+        <h2 className="text-8xl md:text-[12rem] font-black text-aicon-yellow mt-4 uppercase drop-shadow-[10px_10px_0px_#14161A]">
+          CON '26
+        </h2>
       </div>
     </section>
   );
