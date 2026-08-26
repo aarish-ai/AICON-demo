@@ -56,15 +56,17 @@ export default function Hero() {
         <div className="relative flex items-center justify-center h-48 md:h-64 w-full px-4">
           
           {/* Top Half */}
-          <h1 className="absolute text-[15vw] md:text-[10vw] font-black text-white leading-none tracking-tighter whitespace-nowrap" 
+          <h1 className="absolute text-[15vw] md:text-[10vw] font-black leading-none tracking-tighter whitespace-nowrap" 
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)', transform: 'translateY(-2px)' }}>
-            AICON '26
+            <span className="text-white">AI</span>
+            <span className="text-transparent" style={{ WebkitTextStroke: '4px var(--color-aicon-yellow)' }}>CON '26</span>
           </h1>
           
           {/* Bottom Half */}
-          <h1 className="absolute text-[15vw] md:text-[10vw] font-black text-white leading-none tracking-tighter whitespace-nowrap" 
+          <h1 className="absolute text-[15vw] md:text-[10vw] font-black leading-none tracking-tighter whitespace-nowrap" 
               style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)', transform: 'translateY(2px)' }}>
-            AICON '26
+            <span className="text-white">AI</span>
+            <span className="text-transparent" style={{ WebkitTextStroke: '4px var(--color-aicon-yellow)' }}>CON '26</span>
           </h1>
           
         </div>
