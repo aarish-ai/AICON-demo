@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AICON '26",
+  title: "AICON'26",
   description: 'The premier AI conference — AICON 2026',
   icons: {
     icon: '/assets/AIcon.jpeg',
